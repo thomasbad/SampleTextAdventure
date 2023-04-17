@@ -91,11 +91,12 @@
         <description>Room 13</description>
         <north>9</north>
         <east>14</east>
-        <chat></chat>
+        <chat>A unspeakable darkness standing in the middle of the room, cover with a yellow coths. A voice go into your head directly, mumbling, seems asking for something from you.</chat>
     </room>
     <room>
         <description>Room 14</description>
         <west>13</west>
         <north>10</north>
+        <chat></chat>
     </room>
 </dungeon>
