@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dungeon title="Dungeon" author="Jason">
+    <room>
+        <description>Room 0</description>
+        <east>1</east>
+        <south>4</south>
+        <chat>You have come back where you have wake up.\nThis is a dark cave with a hole on the top, but it is too high too reach with. There is nothing left here.</chat>
+    </room>
+    <room>
+        <description>Room 1</description>
+        <east>2</east>
+        <south>7</south>
+        <west>0</west>
+        <chat>You have reach to empty room, there are three doors goes into different directions.\nA paper sticked on the wall and said: "For those who used the Yellow Codices will finally arrived here, for those who overcome this will forget everything they shouldn't remember"</chat>
+    </room>
+    <room>
+        <description>Room 2</description>
+        <west>1</west>
+        <east>3</east>
+        <south>5</south>
+        <chat>You see a old man keep dressing with a dirty yellow coat, keep drawing something on the wall with his finger tip in this room. You don't know what he is drawing but the thing he draw makes you panic. You can feel the darkness and sweaty from his draw.</chat>
+    </room>
+    <room>
+        <description>Room 3</description>
+        <west>2</west>
+        <south>6</south>
+        <chat>You've found a photo on the floor, there's a man hug a woman who seems is his wife, you don't know who they are but you feel warm and claim by looking with it.</chat>
+    </room>
+    <room>
+        <description>Room 4</description>
+        <north>0</north>
+        <east>5</east>
+        <south>7</south>
+        <chat>This is a room smell like blood, a notice board have placed on the ground, said:"Only Loneliness shall become my disciple, only fool shall see the knowledge as madness"</chat>
+    </room>
+    <room>
+        <description>Room 5</description>
+        <west>4</west>
+        <north>2</north>
+        <east>6</east>
+        <south>8</south>
+        <chat>You see a woman holding a dead baby, walking around in the room. She suddenly notice you, she seems know you but you really don't remember who she is, she keep screaming and chasing you, you want to get out from this room as soon as possible.</chat>
+    </room>
+    <room>
+        <description>Room 6</description>
+        <west>5</west>
+        <north>3</north>
+        <south>10</south>
+    </room>
+    <room>
+        <description>Room 7</description>
+        <west>4</west>
+        <north>1</north>
+        <east>8</east>
+        <south>12</south>
+        <chat>This is a empty room looks like an prison, someone used the blood write on the wall: "Only holding the blessing coin can get a deal, only return his wand can get passing him."</chat>
+    </room>
+    <room>
+        <description>Room 8</description>
+        <west>7</west>
+        <north>5</north>
+        <east>9</east>
+        <chat>A skull have lay in this room, there is a dairy placed near it, the whole book write in madness that you can't understand a single sentence. The last page write: "Only if I have the key..."</chat>
+    </room>
+    <room>
+        <description>Room 9</description>
+        <west>8</west>
+        <south>13</south>
+        <east>10</east>
+        <chat>There is a silver coin put in a wooden table, you feels like this is something important, so you pick them up and place in your pocket.</chat>
+    </room>
+    <room>
+        <description>Room 10</description>
+        <west>9</west>
+        <north>6</north>
+        <south>14</south>
+        <chat></chat>
+    </room>
+    <room>
+        <description>Room 11</description>
+        <east>12</east>
+    </room>
+    <room>
+        <description>Room 12</description>
+        <west>11</west>
+        <north>7</north>
+    </room>
+    <room>
+        <description>Room 13</description>
+        <north>9</north>
+        <east>14</east>
+    </room>
+    <room>
+        <description>Room 14</description>
+        <west>13</west>
+        <north>10</north>
+    </room>
+</dungeon>
