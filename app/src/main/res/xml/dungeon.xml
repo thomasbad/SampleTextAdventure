@@ -74,21 +74,24 @@
         <west>9</west>
         <north>6</north>
         <south>14</south>
-        <chat></chat>
+        <chat>A bunch of people wearing yellow coat worshipping on something, they notice and staring at you, mummbling together at you but you don't know what they are talking about.\nYou feel uncontrolable fear from nothing in sudden, deep dark in from your heart.</chat>
     </room>
     <room>
         <description>Room 11</description>
         <east>12</east>
+        <chat>A piece of mud looks like a baby crawing toward to you, which tail with dark, dirty blood. It smell terrible like a bunch of dead mouse, you just want to escape from it.</chat>
     </room>
     <room>
         <description>Room 12</description>
         <west>11</west>
         <north>7</north>
+        <chat>There is a door color in black connected with nothing, stand still in this room made of stone with nothing but the door.\nYou found a golden key attach within the door handle, you take it and put it into your pocket</chat>
     </room>
     <room>
         <description>Room 13</description>
         <north>9</north>
         <east>14</east>
+        <chat></chat>
     </room>
     <room>
         <description>Room 14</description>
