@@ -4,15 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#333333"
+    tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/tv_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="88dp"
+        android:text="The Nap\nof\nThe King in Yellow"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Play"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="112dp"
+        android:backgroundTint="#877F3C"
+        android:text="Start New Game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Title" />
+
+    <Button
+        android:id="@+id/btn_loadGame"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="112dp"
+        android:backgroundTint="#877F3C"
+        android:text="Load Game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Play" />
+
+    <Button
+        android:id="@+id/btn_Help"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#877F3C"
+        android:text="Help"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="493dp" />
+
+    <Button
+        android:id="@+id/btn_About"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#877F3C"
+        android:text="About"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="591dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
