@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/tv_Chat"
+        android:layout_width="283dp"
+        android:layout_height="462dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="67dp"
+        android:text="Loading..."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Status" />
+
+    <TextView
+        android:id="@+id/tv_Status"
+        android:layout_width="70dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:text="Sanity:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_StatusNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_StatusNum"
+        android:layout_width="36dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="100"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_Status"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_North"
+        android:layout_width="94dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="159dp"
+        android:backgroundTint="#737070"
+        android:text="North"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
+
+    <Button
+        android:id="@+id/btn_West"
+        android:layout_width="83dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="17dp"
+        android:backgroundTint="#737070"
+        android:text="West"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_South"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
+
+    <Button
+        android:id="@+id/Btn_South"
+        android:layout_width="89dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="58dp"
+        android:backgroundTint="#737070"
+        android:text="South"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_North" />
+
+    <Button
+        android:id="@+id/btn_East"
+        android:layout_width="83dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#737070"
+        android:text="East"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
+
+    <Button
+        android:id="@+id/btn_Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#454545"
+        android:text="Save Game"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

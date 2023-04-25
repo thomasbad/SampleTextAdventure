@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/aboutTV"
+        android:layout_width="335dp"
+        android:layout_height="367dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="65dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="How to Play:\n\nThis game based on some basic rule of &quot;Call of Cthulhu&quot; boardgame.\nIn the game, you will found you have trap in a cave with no memory why you are here.\n\nNo matter you can find out the truth or not, the most important for you is to stay claim and not being mad, once the &quot;Sanity&quot; drops equal or below 0, you will be gameover.\nAll action here is take with D20 dice automatically"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="293dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="#2196F3"
+        android:text="Back"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutTV" />
+</androidx.constraintlayout.widget.ConstraintLayout>
