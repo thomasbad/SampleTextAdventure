@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_Play, btn_loadGame, btn_Help, btn_About;
+    Button btn_Play, btn_Help, btn_About;
     boolean loadStatus = false;
 
     @Override
@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //StartGame();
-        //LoadGame();
+        StartGame();
         GoAbout();
         GoHelp();
     }
@@ -28,26 +27,15 @@ public class MainActivity extends AppCompatActivity {
         btn_Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //loadStatus = false;
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });
     }
 
-//    protected void LoadGame() {
-//        btn_Play = findViewById(R.id.btn_Play);
-//        btn_Play.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //loadStatus = true;
-//                startActivity(new Intent(MainActivity.this, GameActivity.class));
-//            }
-//        });
-//    }
 
     protected void GoAbout() {
-        btn_Play = findViewById(R.id.btn_About);
-        btn_Play.setOnClickListener(new View.OnClickListener() {
+        btn_About = findViewById(R.id.btn_About);
+        btn_About.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
@@ -56,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void GoHelp() {
-        btn_Play = findViewById(R.id.btn_Help);
-        btn_Play.setOnClickListener(new View.OnClickListener() {
+        btn_Help = findViewById(R.id.btn_Help);
+        btn_Help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, HelpActivity.class));

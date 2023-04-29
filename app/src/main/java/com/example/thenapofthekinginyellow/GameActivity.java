@@ -1,6 +1,7 @@
 package com.example.thenapofthekinginyellow;
 
 
+import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +19,7 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    Button btn_North, btn_East, btn_West, btn_South, btn_Save;
+    Button btn_North, btn_East, btn_West, btn_South, btn_Save, btn_Load;
     TextView tv_Chat, tv_StatusNum;
 
     //player default status
@@ -31,12 +32,31 @@ public class GameActivity extends AppCompatActivity {
     static final int NUM_OF_ROOMS = 15;
     Room[] thedungeon;
 
+    //save game function 1
+    public static final String MY_PREFS = "prefs";
+    public static final String MY_SAN = "sanity";
+    public static final String MY_POS = "currentPos";
+
+    SharedPreferences sharedPrefs;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        //init obj
+        btn_North = findViewById(R.id.btn_North);
+        btn_East = findViewById(R.id.btn_East);
+        btn_West = findViewById(R.id.btn_West);
+        btn_South = findViewById(R.id.btn_South);
+        btn_Save = findViewById(R.id.btn_Save);
+        btn_Load = findViewById(R.id.btn_Load);
+        tv_Chat = findViewById(R.id.tv_Chat);
+        tv_StatusNum = findViewById(R.id.tv_StatusNum);
+
+        //end of init obj
 
         initTheDungeon();
         readXMLFile();
@@ -45,6 +65,8 @@ public class GameActivity extends AppCompatActivity {
         btnTrigger();
         specialRoomTrigger();
         madEnd();
+        saveGame();
+        loadGame();
     }
 
     protected void initTheDungeon()
@@ -188,7 +210,8 @@ public class GameActivity extends AppCompatActivity {
 
     public void displayRooms() {
         tv_Chat.setText(thedungeon[currentPos].getDescription());
-        tv_StatusNum.setText(sanity);
+        //tv_Chat.setText("test");
+        tv_StatusNum.setText(String.valueOf(sanity));
     }
 
     public void btnTrigger(){
@@ -199,6 +222,9 @@ public class GameActivity extends AppCompatActivity {
                 newPos = thedungeon[currentPos].getNorth();
                 currentPos = newPos;
                 displayRooms();
+                specialRoomTrigger();
+                madEnd();
+                initBtn();
             }
         });
 
@@ -208,6 +234,9 @@ public class GameActivity extends AppCompatActivity {
                 int newPos = thedungeon[currentPos].getEast();
                 currentPos = newPos;
                 displayRooms();
+                specialRoomTrigger();
+                madEnd();
+                initBtn();
             }
         });
 
@@ -217,6 +246,9 @@ public class GameActivity extends AppCompatActivity {
                 int newPos = thedungeon[currentPos].getWest();
                 currentPos = newPos;
                 displayRooms();
+                specialRoomTrigger();
+                madEnd();
+                initBtn();
             }
         });
 
@@ -226,6 +258,9 @@ public class GameActivity extends AppCompatActivity {
                 int newPos = thedungeon[currentPos].getSouth();
                 currentPos = newPos;
                 displayRooms();
+                specialRoomTrigger();
+                madEnd();
+                initBtn();
             }
         });
     }
@@ -233,12 +268,16 @@ public class GameActivity extends AppCompatActivity {
     public void specialRoomTrigger(){
         if (currentPos == 2 || currentPos == 5 || currentPos == 10 || currentPos == 11){
             int hurtCount = new Random().nextInt(21);
-            sanity = sanity - hurtCount;
-            tv_StatusNum.setText(sanity);
+            sanity = sanity - (hurtCount * 2 );
+            tv_StatusNum.setText(String.valueOf(sanity));
         } else if (currentPos == 3 || currentPos == 8){
             int healCount = new Random().nextInt(21);
-            sanity = sanity + healCount;
-            tv_StatusNum.setText(sanity);
+            if (sanity + healCount > 100){
+                sanity = 100;
+            }else{
+                sanity = sanity + healCount;
+            }
+            tv_StatusNum.setText(String.valueOf(sanity));
         } else if (currentPos == 9){
             silverCoin = true;
         } else if (currentPos == 12){
@@ -247,7 +286,7 @@ public class GameActivity extends AppCompatActivity {
             stick = true;
         } else if (currentPos == 13) {
             if (silverCoin == true && key == true && stick == true){
-                String winMsg = "You found you wake up on the bed, sweating all your back.\nYou can't really remember what is happened, but you glad that you have excape from the nightmare, and no one ever does it.\n\nCongratulations! You have Win the Game!";
+                String winMsg = "A unspeakable darkness standing in the middle of the room, cover with a yellow cloths. A voice go into your head directly, mumbling, seems asking for something from you.\n\nYou gave him everything, suddenly you found you wake up on the bed, sweating all your back.\nYou can't really remember what is happened, but you glad that you have excape from the nightmare, and no one ever does it.\n\nCongratulations! You have Win the Game!";
                 btn_Save.setVisibility(View.GONE);
                 btn_South.setVisibility(View.GONE);
                 btn_West.setVisibility(View.GONE);
@@ -255,7 +294,7 @@ public class GameActivity extends AppCompatActivity {
                 btn_North.setVisibility(View.GONE);
                 tv_Chat.setText(winMsg);
             } else {
-                String badEnd = "You push the door behind that unspeakable darkness thing, and you found that you have come back to the first place, all your memory is gone, you don't remember what your have just done, the door you just pass though is also disappeared, you know you have trapped in a loop and you will soon forget about this too, which have drive you mad completely, lost in here, forever...\n\n Game Over: Try harder traveller, you must have miss something";
+                String badEnd = "A unspeakable darkness standing in the middle of the room, cover with a yellow cloths. A voice go into your head directly, mumbling, seems asking for something from you.\nYou push the door behind that unspeakable darkness thing, and you found that you have come back to the first place, all your memory is gone, you don't remember what your have just done, the door you just pass though is also disappeared, you know you have trapped in a loop and you will soon forget about this too, which have drive you mad completely, lost in here, forever...\n\n Game Over: Try harder traveller, you must have miss something";
                 btn_Save.setVisibility(View.GONE);
                 btn_South.setVisibility(View.GONE);
                 btn_West.setVisibility(View.GONE);
@@ -276,6 +315,34 @@ public class GameActivity extends AppCompatActivity {
             btn_North.setVisibility(View.GONE);
             tv_Chat.setText(loseMsg);
         }
+    }
+
+    public void saveGame()
+    {
+        btn_Save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPrefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+                SharedPreferences.Editor edit = sharedPrefs.edit();
+                edit.putInt(MY_POS, currentPos);
+                edit.putInt(MY_SAN, sanity);
+                edit.commit();
+            }
+        });
+
+    }
+
+    public void loadGame(){
+        btn_Load.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPrefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+                currentPos = sharedPrefs.getInt(MY_POS, 0);
+                sanity = sharedPrefs.getInt(MY_SAN, 100);
+                initBtn();
+                displayRooms();
+            }
+        });
     }
 
 }

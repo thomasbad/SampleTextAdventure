@@ -7,10 +7,25 @@
     android:background="#333333"
     tools:context=".GameActivity">
 
+    <Button
+        android:id="@+id/btn_Load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#454545"
+        android:text="Load Game"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Chat"
+        app:layout_constraintEnd_toStartOf="@+id/tv_Status"
+        app:layout_constraintStart_toEndOf="@+id/btn_Save"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_Chat"
-        android:layout_width="283dp"
-        android:layout_height="462dp"
+        android:layout_width="314dp"
+        android:layout_height="434dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="67dp"
@@ -54,13 +69,15 @@
         android:layout_width="94dp"
         android:layout_height="61dp"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="159dp"
         android:backgroundTint="#737070"
         android:text="North"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Chat"
+        app:layout_constraintVertical_bias="0.106" />
 
     <Button
         android:id="@+id/btn_West"
@@ -71,23 +88,23 @@
         android:layout_marginEnd="17dp"
         android:backgroundTint="#737070"
         android:text="West"
-        app:layout_constraintEnd_toStartOf="@+id/Btn_South"
+        app:layout_constraintEnd_toStartOf="@+id/btn_South"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
 
     <Button
-        android:id="@+id/Btn_South"
+        android:id="@+id/btn_South"
         android:layout_width="89dp"
         android:layout_height="66dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="78dp"
         android:layout_marginBottom="58dp"
         android:backgroundTint="#737070"
         android:text="South"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_North" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Chat" />
 
     <Button
         android:id="@+id/btn_East"
@@ -104,8 +121,15 @@
         android:id="@+id/btn_Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#454545"
         android:text="Save Game"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_Chat"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Load"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
