@@ -1,8 +1,10 @@
 package com.example.thenapofthekinginyellow;
 
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +41,10 @@ public class GameActivity extends AppCompatActivity {
 
     SharedPreferences sharedPrefs;
 
+    //Sound obj
+    Context context=this;
+    MediaPlayer mp;
+
 
 
     @Override
@@ -67,6 +73,7 @@ public class GameActivity extends AppCompatActivity {
         madEnd();
         saveGame();
         loadGame();
+        PlayBGM();
     }
 
     protected void initTheDungeon()
@@ -341,8 +348,14 @@ public class GameActivity extends AppCompatActivity {
                 sanity = sharedPrefs.getInt(MY_SAN, 100);
                 initBtn();
                 displayRooms();
+                btn_Save.setVisibility(View.VISIBLE);
             }
         });
+    }
+
+    public void PlayBGM(){
+        mp = MediaPlayer.create(context, R.raw.bgm);
+        mp.start();
     }
 
 }
