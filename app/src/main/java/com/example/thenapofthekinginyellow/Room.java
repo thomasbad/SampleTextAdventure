@@ -7,14 +7,14 @@ public class Room {
     private int east;
     private int south;
     private int west;
-    private String chat;
+    private String description;
     Room()
     {
         north = NO_EXIT;
         east = NO_EXIT;
         south = NO_EXIT;
         west = NO_EXIT;
-        chat = "NOTHING";
+        description = "NOTHING";
     }
 
     public int getNorth() {
@@ -49,11 +49,11 @@ public class Room {
         this.west = west;
     }
 
-    public String getChat() {
-        return chat;
+    public String getDescription() {
+        return description;
     }
 
-    public void setChatBox(String chat) {
-        this.chat = chat;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

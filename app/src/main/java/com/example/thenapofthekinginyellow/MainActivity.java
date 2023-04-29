@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        StartGame();
-        LoadGame();
+        //StartGame();
+        //LoadGame();
         GoAbout();
         GoHelp();
     }
@@ -28,22 +28,22 @@ public class MainActivity extends AppCompatActivity {
         btn_Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadStatus = false;
+                //loadStatus = false;
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });
     }
 
-    protected void LoadGame() {
-        btn_Play = findViewById(R.id.btn_Play);
-        btn_Play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadStatus = true;
-                startActivity(new Intent(MainActivity.this, GameActivity.class));
-            }
-        });
-    }
+//    protected void LoadGame() {
+//        btn_Play = findViewById(R.id.btn_Play);
+//        btn_Play.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //loadStatus = true;
+//                startActivity(new Intent(MainActivity.this, GameActivity.class));
+//            }
+//        });
+//    }
 
     protected void GoAbout() {
         btn_Play = findViewById(R.id.btn_About);
